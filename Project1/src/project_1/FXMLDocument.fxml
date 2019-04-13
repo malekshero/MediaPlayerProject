@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_1.FXMLDocumentController">
+    <children>
+         <AnchorPane id="dashboard-container" fx:id="DASHBOARD_CONTAINER" prefHeight="768.0" prefWidth="1366.0">
+         <children>
+            <AnchorPane opacity="0.2" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #222222;" />
+            <AnchorPane id="container" fx:id="DASHBOARD_CONTENT_CONTAINER" layoutX="67.0" layoutY="77.0" prefHeight="594.0" prefWidth="1232.0" styleClass="container" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="77.0">
+               <children>
+                  <AnchorPane id="top-center-side" layoutX="411.0" prefHeight="30.0" prefWidth="400.0" styleClass="top-center-side" AnchorPane.leftAnchor="416.0">
+                     <children>
+                        <Button fx:id="DASHBOARD_BUTTON_HOME" mnemonicParsing="false" onMousePressed="#dashboardMenuMouseEvent" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 0px;">
+                           <graphic>
+                              <Text fx:id="DASHBOARD_LABEL_HOME" onMousePressed="#dashboardMenuMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Text>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Pane fx:id="DASHBOARD_PANE_HOME" layoutX="31.0" layoutY="33.0" prefHeight="1.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" visible="false" />
+                        <Button fx:id="DASHBOARD_BUTTON_MUSIC" layoutX="300.0" mnemonicParsing="false" onMousePressed="#dashboardMenuMouseEvent" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 0px;">
+                           <graphic>
+                              <Text fx:id="DASHBOARD_LABEL_MUSIC" onMousePressed="#dashboardMenuMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" text="Music">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Text>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Pane fx:id="DASHBOARD_PANE_MUSIC" layoutX="332.0" layoutY="33.0" prefHeight="1.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" visible="false" />
+                        <Button fx:id="DASHBOARD_BUTTON_VIDEOS" layoutX="142.5" mnemonicParsing="false" onMousePressed="#dashboardMenuMouseEvent" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 0px;" AnchorPane.leftAnchor="145.0">
+                           <graphic>
+                              <Text fx:id="DASHBOARD_LABEL_VIDEOS" onMousePressed="#dashboardMenuMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" text="Videos">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Text>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Pane fx:id="DASHBOARD_PANE_VIDEOS" layoutX="181.0" layoutY="33.0" prefHeight="1.0" prefWidth="38.0" style="-fx-background-color: #FFFFFF;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="832.0" prefHeight="30.0" prefWidth="400.0" styleClass="top-right-side">
+                     <children>
+                        <AnchorPane fx:id="DASHBOARD_PANE_SETTINGS" layoutX="370.0" onMousePressed="#settings" prefHeight="30.0" prefWidth="30.0">
+                           <children>
+                              <ImageView fx:id="DASHBOARD_SETTINGS_IMAGE" fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="2.0" onMousePressed="#settings">
+                                 <image>
+                                    <Image url="@images/SETTINGS.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </AnchorPane>
+                        <TextField fx:id="DASHBOARD_SEARCH_FIELD" layoutX="165.0" prefHeight="30.0" prefWidth="159.0" style="-fx-border-width: 0; -fx-border-color: #FFFFFF; -fx-background-radius: transparent; -fx-text-fill: #FFFFFF;">
+                           <font>
+                              <Font name="Open Sans" size="13.0" />
+                           </font></TextField>
+                        <Pane layoutX="347.0" prefHeight="30.0" prefWidth="2.0" style="-fx-background-color: #FFFFFF;" />
+                        <AnchorPane fx:id="DASHBOARD_PANE_SEARCH" layoutX="294.0" onMousePressed="#search" prefHeight="30.0" prefWidth="30.0">
+                           <children>
+                              <ImageView fx:id="DASHBOARD_SEARCH_IMAGE" fitHeight="16.0" fitWidth="16.0" layoutX="7.0" layoutY="7.0" onMousePressed="#search">
+                                 <image>
+                                    <Image url="@images/SEARCH.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="30.0" prefWidth="400.0" styleClass="top-left-side">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="150.0" layoutX="-2.0" layoutY="-16.0">
+                           <image>
+                              <Image url="@images/LOGO.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="87.0" prefHeight="487.0" prefWidth="1232.0" styleClass="content" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="107.0">
+                     <children>
+                        <AnchorPane prefHeight="487.0" prefWidth="159.0" styleClass="content-menu">
+                           <children>
+                              <AnchorPane fx:id="DASHBOARD_PANE_LIKED_TRUCK" layoutX="-12.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" prefHeight="36.0" prefWidth="170.0">
+                                 <children>
+                                    <Text fx:id="DASHBOARD_LABEL_LIKED_TRUCK" layoutX="11.0" layoutY="24.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Liked Trucks">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Text>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_PANE_PLAYLISTS" layoutX="-12.0" layoutY="46.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" prefHeight="36.0" prefWidth="170.0">
+                                 <children>
+                                    <Text fx:id="DASHBOARD_LABEL_PLAYLISTS" layoutX="11.0" layoutY="24.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="PlayLists">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Text>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_PANE_RECENTLY_PLAYED" layoutX="-12.0" layoutY="92.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" prefHeight="36.0" prefWidth="170.0">
+                                 <children>
+                                    <Text fx:id="DASHBOARD_LABEL_RECENTLY_PLAYED" layoutX="11.0" layoutY="24.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Recently Played">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Text>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_PANE_FOLDERS" layoutX="-12.0" layoutY="138.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" prefHeight="36.0" prefWidth="170.0">
+                                 <children>
+                                    <Text fx:id="DASHBOARD_LABEL_FOLDERS" layoutX="12.0" layoutY="25.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Folders">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Text>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_PANE_EXIT" layoutX="-12.0" layoutY="451.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" prefHeight="36.0" prefWidth="170.0">
+                                 <children>
+                                    <Text fx:id="DASHBOARD_LABEL_EXIT" layoutX="42.0" layoutY="24.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Exit">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Text>
+                                    <ImageView fx:id="DASHBOARD_EXIT_IMAGE" fitHeight="22.0" fitWidth="20.0" layoutX="12.0" layoutY="7.0" onMousePressed="#dashboardMenuMouseEvent" onMouseReleased="#dashboardMenuDeleteEffectMouseEvent">
+                                       <image>
+                                          <Image url="@images/EXIT_WHITE.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <Pane layoutX="158.0" opacity="0.2" prefHeight="487.0" prefWidth="1.0" style="-fx-background-color: #FFFFFF;" />
+                        <AnchorPane fx:id="ELEMENT_CONTENT" layoutX="159.0" prefHeight="487.0" prefWidth="1073.0" styleClass="element-container">
+                           <children>
+                               <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_1" layoutX="33.0" layoutY="1.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                 <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_1" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_1" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_1" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_1" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_1" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_6" layoutX="33.0" layoutY="249.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_6" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_6" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_6" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_6" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_6" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_2" layoutX="243.0" layoutY="1.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_2" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_2" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_2" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_2" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_2" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_7" layoutX="243.0" layoutY="249.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_7" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_7" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_7" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_7" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_7" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_3" layoutX="453.0" layoutY="1.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_3" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_3" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_3" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_3" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_3" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_8" layoutX="453.0" layoutY="249.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_8" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_8" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_8" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_8" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_8" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_4" layoutX="663.0" layoutY="1.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_4" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_4" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_4" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_4" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_4" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_9" layoutX="663.0" layoutY="249.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_9" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_9" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_9" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_9" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_9" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_5" layoutX="873.0" layoutY="1.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_5" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_5" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_5" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_5" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_5" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_10" layoutX="873.0" layoutY="249.0" prefHeight="238.0" prefWidth="200.0" visible="false">
+                                  <children>
+                                    <AnchorPane fx:id="IMAGE_CONTAINER_10" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="180.0" styleClass="image-container" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="ADD_FILE_10" layoutX="60.0" layoutY="70.0" prefHeight="80.0" prefWidth="80.0" styleClass="add-file" visible="false" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="79.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="10.0">
+                                             <image>
+                                                <Image url="@images/PLUS.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="11.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add File" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="TITLE_10" layoutX="10.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Kit Wenselt" AnchorPane.leftAnchor="10.0" />
+                                    <Text fx:id="DESCRIPTION_10" layoutX="10.0" layoutY="227.921875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="AMAZING VIDEO" AnchorPane.leftAnchor="10.0" />
+                                    <AnchorPane fx:id="DASHBOARD_ANNCHORPANE_LISTENER_10" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#setTheNumberOfAnchorPane" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></AnchorPane>
+                                  </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="AUDIO_PLAYER_CONTAINER" layoutX="159.0" prefHeight="487.0" prefWidth="1073.0" styleClass="music-player-container" visible="false">
+                           <children>
+                              <AnchorPane layoutX="122.0" layoutY="412.0" prefHeight="75.0" prefWidth="740.0" styleClass="bottom-nav-music" AnchorPane.leftAnchor="166.5">
+                                 <children>
+                                    <JFXSlider fx:id="audioSeekSlider" layoutX="52.0" prefHeight="14.0" prefWidth="640.0" value="0.001" />
+                                    <AnchorPane layoutX="308.0" layoutY="30.0" prefHeight="45.0" prefWidth="200.0" styleClass="center-nav" AnchorPane.leftAnchor="270.0">
+                                       <children>
+                                          <ImageView fx:id="AUDIO_PAUSE_IMAGE" fitHeight="45.0" fitWidth="45.0" layoutX="82.0" onMousePressed="#AudioOperation" visible="false" AnchorPane.leftAnchor="77.5">
+                                             <image>
+                                                <Image url="@images/PAUSE_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_SEEK_LEFT_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="36.0" layoutY="8.0" onMousePressed="#AudioOperation">
+                                             <image>
+                                                <Image url="@images/SEEK_BACK_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_SEEK_RIGHT_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="134.0" layoutY="8.0" onMousePressed="#AudioOperation">
+                                             <image>
+                                                <Image url="@images/SEEK_FORWARD_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_PLAY_IMAGE" fitHeight="45.0" fitWidth="45.0" layoutX="78.0" onMousePressed="#AudioOperation">
+                                             <image>
+                                                <Image url="@images/PLAY_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="1.0" layoutY="30.0" prefHeight="45.0" prefWidth="200.0" styleClass="left-nav">
+                                       <children>
+                                          <ImageView fx:id="AUDIO_OPEN_FILE_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="1.0" layoutY="7.0" onMousePressed="#openMusicFile_handleMouseEvent">
+                                             <image>
+                                                <Image url="@images/MENU_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_LIKE_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="43.0" layoutY="7.0" onMousePressed="#AudioOperation" visible="false">
+                                             <image>
+                                                <Image url="@images/LIKE_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_UNLIKE_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="43.0" layoutY="7.0" onMousePressed="#AudioOperation">
+                                             <image>
+                                                <Image url="@images/UNLIKE_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="539.0" layoutY="30.0" prefHeight="45.0" prefWidth="200.0" styleClass="right-nav">
+                                       <children>
+                                          <ImageView fx:id="AUDIO_REPLAY_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="169.0" layoutY="8.0" onMousePressed="#AudioOperation">
+                                             <image>
+                                                <Image url="@images/REPLAY_MUSIC.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <ImageView fx:id="AUDIO_CONVERT_IMAGE" fitHeight="30.0" fitWidth="30.0" layoutX="127.0" layoutY="8.0" onMousePressed="#AudioOperation" style="-fx-background-color: #FFFFFF;">
+                                             <image>
+                                                <Image url="@images/CONVERT.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <Text fx:id="AUDIO_SEEK_VALUE_TEXT" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00 : 00" />
+                                    <Text fx:id="AUDIO_COMPLETE_TIME_TEXT" layoutX="699.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00 : 00" />
+                                 </children></AnchorPane>
+                              <AnchorPane fx:id="IMAGE_CONTAINER" layoutX="200.0" prefHeight="355.0" prefWidth="630.0" styleClass="image-container" AnchorPane.leftAnchor="221.5" />
+                              <AnchorPane fx:id="TITLE_CONTAINER" layoutX="389.0" layoutY="369.0" prefHeight="30.0" prefWidth="740.0" styleClass="title-container" AnchorPane.leftAnchor="166.5">
+                                 <children>
+                                    <Text fx:id="AUDIO_SONG_TITLE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marron 5" wrappingWidth="740.0000067651272" />
+                                 </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="pagination" fx:id="PAGENATION_LEFT" layoutX="261.0" layoutY="705.0" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#dashboardMenuMouseEvent" prefHeight="30.0" prefWidth="30.0" visible="false" AnchorPane.bottomAnchor="33.0">
+               <children>
+                  <ImageView fx:id="PAGENATION_LEFT_IMAGE" fitHeight="13.0" fitWidth="13.0" layoutX="7.0" layoutY="9.0" onMousePressed="#dashboardMenuMouseEvent" style="-fx-rotate: 180deg;">
+                     <image>
+                        <Image url="@images/ARROW_PAGINATION.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="PAGENATION_LEFT_DARK_IMAGE" fitHeight="13.0" fitWidth="13.0" layoutX="7.0" layoutY="9.0" onMousePressed="#dashboardMenuMouseEvent" style="-fx-rotate: 180deg;" visible="false">
+                     <image>
+                        <Image url="@images/ARROW_PAGINATION_DARK.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane id="pagination" fx:id="PAGENATION_RIGHT" layoutX="1269.0" layoutY="705.0" onMouseExited="#MouseExitElement" onMouseMoved="#MouseHoverElement" onMousePressed="#dashboardMenuMouseEvent" prefHeight="30.0" prefWidth="30.0" visible="false" AnchorPane.bottomAnchor="33.0">
+               <children>
+                  <ImageView fx:id="PAGENATION_RIGHT_IMAGE" fitHeight="13.0" fitWidth="13.0" layoutX="9.0" layoutY="8.0" onMousePressed="#dashboardMenuMouseEvent">
+                     <image>
+                        <Image url="@images/ARROW_PAGINATION.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="PAGENATION_RIGHT_DARK_IMAGE" fitHeight="13.0" fitWidth="13.0" layoutX="9.0" layoutY="8.0" onMousePressed="#dashboardMenuMouseEvent" visible="false">
+                     <image>
+                        <Image url="@images/ARROW_PAGINATION_DARK.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane id="pagenation-center" fx:id="PAGENATION_CENTER" layoutX="754.0" layoutY="705.0" prefHeight="30.0" prefWidth="50.0" visible="false">
+               <children>
+                  <Text fx:id="PAGENITION_TEXT" layoutX="20.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+               </children>
+            </AnchorPane>
+            
+                                                
+            <AnchorPane id="dashboard" fx:id="DASHBOARD" prefHeight="768.0" prefWidth="1366.0" visible="false">
+               <children>
+                  <Pane layoutX="796.0" layoutY="55.0" prefHeight="0.5" prefWidth="400.0" style="-fx-background-color: #C1BFC0;" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="55.0" />
+                  <Pane layoutX="146.0" layoutY="55.0" prefHeight="0.5" prefWidth="400.0" style="-fx-background-color: #C1BFC0;" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="55.0" />
+                  <Text layoutX="620.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #EEEEEE;" text="SETTINGS" />
+                  <Pane layoutX="60.0" layoutY="112.0" prefHeight="500.0" prefWidth="0.5" style="-fx-background-color: #C1BFC0;" visible="false" AnchorPane.leftAnchor="60.0" />
+                  <Pane layoutX="56.0" layoutY="110.0" prefHeight="0.5" prefWidth="1000.0" style="-fx-background-color: #C1BFC0;" visible="false" AnchorPane.topAnchor="110.0" />
+                  <Text fx:id="THEME_TITLE" layoutX="61.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="THEMES" />
+                  <Text layoutX="70.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <AnchorPane layoutX="71.0" layoutY="126.0" prefHeight="19.0" prefWidth="200.0" style="-fx-background-color: F00;" visible="false" />
+                  <Pane layoutX="71.0" layoutY="218.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <AnchorPane id="firstTheme" layoutX="71.0" layoutY="227.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: DDDDDD;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <AnchorPane id="checked-theme" fx:id="FIRST_THEME" onMousePressed="#applyTheme" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="FIRST_THEME_IMAGE" layoutX="24.0" layoutY="24.0" onMousePressed="#applyTheme" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                 <image>
+                                    <Image url="@images/CHECKMARK.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="secondTheme" layoutX="177.0" layoutY="227.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: DDDDDD;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <AnchorPane id="checked-theme" fx:id="SECOND_THEME" onMousePressed="#applyTheme" opacity="1.0E-4" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="SECOND_THEME_IMAGE" layoutX="25.0" layoutY="28.0" onMousePressed="#applyTheme" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                 <image>
+                                    <Image url="@images/CHECKMARK.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="thirdTheme" layoutX="283.0" layoutY="227.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: DDDDDD;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <AnchorPane id="checked-theme" fx:id="THIRD_THEME" onMousePressed="#applyTheme" opacity="1.0E-4" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="THIRD_THEME_IMAGE" layoutX="26.0" layoutY="23.0" onMousePressed="#applyTheme" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                 <image>
+                                    <Image url="@images/CHECKMARK.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <Text fx:id="COLOR_TITLE" layoutX="61.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="COLORS" />
+                  <Text layoutX="70.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <Pane layoutX="71.0" layoutY="473.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <AnchorPane layoutX="70.0" layoutY="482.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: FFFFFF;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="146.0" layoutY="560.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: F03434;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="516.0" layoutY="276.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: F00;" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="108.0" layoutY="482.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: AAAAAA;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="184.0" layoutY="560.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #CF000F;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="146.0" layoutY="482.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #6D6D6D;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="184.0" layoutY="482.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #333333;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></AnchorPane>
+                  <AnchorPane layoutX="382.0" layoutY="268.0" prefHeight="19.0" prefWidth="134.0" style="-fx-background-color: F00;" visible="false" />
+                  <Text fx:id="SEARCH_TITLE" layoutX="516.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="SEARCH'S PATTERN" />
+                  <Text layoutX="525.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <Pane layoutX="526.0" layoutY="218.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <Text fx:id="CONVERT_TITLE" layoutX="516.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="CONVERT AUDIO FORMAT" />
+                  <Text layoutX="525.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <Pane layoutX="526.0" layoutY="422.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <RadioButton fx:id="FIRST_RADIOBUTTON" layoutX="527.0" layoutY="226.0" mnemonicParsing="false" selected="true" text=" Search By Words" textFill="#dddddd">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="search" />
+                     </toggleGroup>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <RadioButton fx:id="SECOND_RADIOBUTTON" layoutX="527.0" layoutY="257.0" mnemonicParsing="false" text=" Search By Full Title" textFill="#dddddd" toggleGroup="$search">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <Text layoutX="637.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Song's Path :" />
+                  <Text fx:id="FILE_PATH" layoutX="722.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="desc" wrappingWidth="165.00000137090683" />
+                  <Text layoutX="637.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Click To Convert" />
+                  <Text fx:id="RECORD_TITLE" layoutX="516.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="VOICE RECORDING" />
+                  <Text layoutX="525.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <Pane layoutX="526.0" layoutY="645.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <Text fx:id="SUBTITLE_TITLE" layoutX="973.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="SUBTITLE'S SETTINGS" />
+                  <Text layoutX="982.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim " wrappingWidth="299.9287109375" />
+                  <Pane layoutX="983.0" layoutY="218.0" prefHeight="0.5" prefWidth="312.0" style="-fx-background-color: #C1BFC0;" />
+                  <AnchorPane layoutX="233.0" layoutY="699.0" onMousePressed="#exit" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: DDDDDD;" />
+                  <Button id="button" fx:id="CHOOSE_FILE_BTN" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="527.0" layoutY="432.0" mnemonicParsing="false" onAction="#applyConvert" prefHeight="30.0" prefWidth="95.0" scaleShape="false" style="-fx-text-fill: #3498db;" text="Choose File" textFill="#3498db">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="CONVERT_BTN" layoutX="527.0" layoutY="473.0" mnemonicParsing="false" onAction="#applyConvert" prefHeight="30.0" prefWidth="95.0" style="-fx-text-fill: #3498db;" text="Convert" textFill="#3498db">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="RECORD_BTN" layoutX="526.0" layoutY="654.0" mnemonicParsing="false" onAction="#applyRecord" prefHeight="30.0" prefWidth="95.0" style="-fx-text-fill: #3498db;" text="Record" textFill="#3498db">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <AnchorPane layoutX="108.0" layoutY="521.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #3498db;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="146.0" layoutY="521.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #336E7B;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="184.0" layoutY="521.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #013243;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="70.0" layoutY="521.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #5DC3B0;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="70.0" layoutY="560.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #87D37C;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="108.0" layoutY="560.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #1E824C;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="70.0" layoutY="598.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #E9D460;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="108.0" layoutY="598.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #F7CA18;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="146.0" layoutY="598.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #F89406;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane layoutX="184.0" layoutY="598.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: #D35400;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_1" layoutX="66.0" layoutY="478.0" opacity="0.0011" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #FFFFFF;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_2" layoutX="104.0" layoutY="478.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: AAAAAA;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_3" layoutX="142.0" layoutY="478.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #6D6D6D;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_4" layoutX="180.0" layoutY="478.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #333333;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_5" layoutX="66.0" layoutY="517.0" opacity="1.0E-4" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #5DC3B0;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_6" layoutX="104.0" layoutY="517.0" opacity="1" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #3498db;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_7" layoutX="142.0" layoutY="517.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #336E7B;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_8" layoutX="180.0" layoutY="517.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #013243;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_9" layoutX="66.0" layoutY="556.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #87D37C;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_10" layoutX="104.0" layoutY="556.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #1E824C;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_11" layoutX="142.0" layoutY="556.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: F03434;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_12" layoutX="180.0" layoutY="556.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #CF000F;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_13" layoutX="66.0" layoutY="594.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #E9D460;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_14" layoutX="104.0" layoutY="594.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #F7CA18;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_15" layoutX="142.0" layoutY="594.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #F89406;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane id="checked-color" fx:id="COLOR_16" layoutX="180.0" layoutY="594.0" opacity="0.001" prefHeight="38.0" prefWidth="38.0" style="-fx-border-color: #D35400;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            
+                          
+            <AnchorPane id="add-playlist" fx:id="ADD_PLAYLIST" prefHeight="768.0" prefWidth="1366.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="388.0" layoutY="260.0" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="254.0">
+                     <children>
+                        <Text layoutX="24.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New PlayList" />
+                        <Text layoutX="36.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Title : " />
+                        <Text layoutX="36.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Description :" />
+                        <Pane layoutX="24.0" layoutY="52.0" prefHeight="3.0" prefWidth="50.0" style="-fx-background-color: #3498db;" />
+                        <Text layoutX="36.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Rating :" />
+                        <TextField fx:id="TITLE_PLAYLIST" layoutX="153.0" layoutY="78.0" style="-fx-background-color: EEEEEE; -fx-border-color: transparent; -fx-background-radius: transparent;" />
+                        <TextField fx:id="DESCRIPTION_PLAYLIST" layoutX="153.0" layoutY="117.0" style="-fx-background-color: EEEEEE; -fx-border-color: transparent; -fx-background-radius: transparent;" />
+                        <Button fx:id="CREATE_PLAYLIST" layoutX="24.0" layoutY="200.0" mnemonicParsing="false" onAction="#MouseClickPlayListMethod" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #3498db; -fx-border-color: #3498db; -fx-background-radius: transparent;" text="Create" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="CANCEL_PLAYLIST" layoutX="91.0" layoutY="200.0" mnemonicParsing="false" onAction="#MouseClickPlayListMethod" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #3498db; -fx-border-color: #3498db; -fx-background-radius: transparent;" text="Cancel" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <effect>
+                        <DropShadow color="#333333" height="15.0" radius="7.0" width="15.0" />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="add-playlist" fx:id="CONVERT_SONG" prefHeight="768.0" prefWidth="1366.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="388.0" layoutY="260.0" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="254.0">
+                     <children>
+                        <Text layoutX="24.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type A Title For This Song :" />
+                        <Text layoutX="36.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Title : " />
+                        <Pane layoutX="24.0" layoutY="52.0" prefHeight="3.0" prefWidth="50.0" style="-fx-background-color: #3498db;" />
+                        <TextField fx:id="SONG_NEW_NAME" layoutX="153.0" layoutY="78.0" style="-fx-background-color: EEEEEE; -fx-border-color: transparent; -fx-background-radius: transparent;" />
+                        <Button fx:id="SAVE_NEW_NAME" layoutX="24.0" layoutY="200.0" mnemonicParsing="false" onAction="#MouseClickConvertMethod" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #3498db; -fx-border-color: #3498db; -fx-background-radius: transparent;" text="Save" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="CANCEL_NEW_NAME" layoutX="91.0" layoutY="200.0" mnemonicParsing="false" onAction="#MouseClickConvertMethod" prefHeight="30.0" prefWidth="55.0" style="-fx-background-color: #3498db; -fx-border-color: #3498db; -fx-background-radius: transparent;" text="Cancel" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Text layoutX="36.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="This new song which converted from the original version of the song itself, will be saved into a this path." wrappingWidth="338.1796875" />
+                        <Text layoutX="36.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="path" text="C / Users / samra / Music" />
+                     </children>
+                     <effect>
+                        <DropShadow color="#333333" height="15.0" radius="7.0" width="15.0" />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane fx:id="NOTIFICATION_LOADING" layoutX="388.0" layoutY="260.0" opacity="0.7" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #333;" visible="false" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="254.0">
+                     <children>
+                        <ImageView fx:id="GEAR" fitHeight="40.0" fitWidth="40.0" layoutX="160.0" layoutY="90.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="110.0">
+                           <image>
+                              <Image url="@images/LOADING.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  
+                  
+                  <AnchorPane fx:id="NOTIFICATION_MESSAGE" layoutX="388.0" layoutY="260.0" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #3498db;" visible="false" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="254.0">
+                     <children>
+                        <Text layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="done" text="DONE CONVERTING..." textAlignment="CENTER" wrappingWidth="399.9999860525131" />
+                        <ImageView layoutX="175.0" layoutY="82.0">
+                           <image>
+                              <Image url="@images/DONE_CONVERTING.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+
+                  
+                  
+               </children>
+            </AnchorPane>
+            <AnchorPane id="add-playlist" fx:id="RECORD" prefHeight="768.0" prefWidth="1366.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="388.0" layoutY="260.0" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="254.0">
+                     <children>
+                        <Text fx:id="counter" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="counter" text="00 : 00" textAlignment="CENTER" wrappingWidth="399.9999860525131" />
+                        <JFXSlider fx:id="counterSlider" cache="true" layoutX="51.0" layoutY="90.0" max="1800.0" prefHeight="14.0" prefWidth="300.0" value="1.0E-4" />
+                        <ImageView fx:id="RECORD_IMG" fitHeight="40.0" fitWidth="40.0" layoutX="51.0" layoutY="128.0">
+                           <image>
+                              <Image url="@images/RECORD.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="STOP_IMG" fitHeight="34.0" fitWidth="34.0" layoutX="146.0" layoutY="132.0">
+                           <image>
+                              <Image url="@images/STOP.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="PAUSE_IMG" fitHeight="34.0" fitWidth="34.0" layoutX="102.0" layoutY="132.0">
+                           <image>
+                              <Image url="@images/STOP_RECORD.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text layoutX="51.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="description" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dm ad minim " wrappingWidth="299.9286860227585" />
+                     </children>
+                     <effect>
+                        <DropShadow color="#333333" height="15.0" radius="7.0" width="15.0" />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+        <AnchorPane id="video-player-container" fx:id="VIDEO_PLAYER_CONTAINER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" visible="false">
+            <children>
+               <AnchorPane fx:id="VIDEO_CONTAINER" onMousePressed="#handleMouseClick" prefHeight="768.0" prefWidth="1366.0" styleClass="video-container">
+                  <children>
+                     <BorderPane fx:id="borderpane" onMouseMoved="#mousePosition" prefHeight="768.0" prefWidth="1366.0">
+                        <left>
+                           <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                              <children>
+                                 <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" onError="#openFile_handleMouseEvent" />
+                              </children>
+                           </StackPane>
+                        </left>
+                     </BorderPane>
+                  </children>
+               </AnchorPane>
+               <AnchorPane id="top-nav" fx:id="TOP_SECTION_PANE" prefHeight="27.0" prefWidth="1366.0" style="-fx-background-color: #121212;" visible="false">
+                  <children>
+                     <AnchorPane fx:id="TOP_EXIT" layoutX="1326.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav" prefHeight="27.0" prefWidth="40.0" styleClass="top-nav-cancel" />
+                     <ImageView fx:id="TOP_EXIT_IMAGE" fitHeight="11.5" fitWidth="11.5" layoutX="1340.0" layoutY="8.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav">
+                        <image>
+                           <Image url="@images/EXIT-TOP-NAV.png" />
+                        </image>
+                     </ImageView>
+                     <AnchorPane fx:id="TOP_FULLSCREEN" layoutX="1286.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav" prefHeight="27.0" prefWidth="40.0" styleClass="top-nav-zoom" />
+                     <AnchorPane fx:id="TOP_MINIMIZE" layoutX="1246.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav" prefHeight="27.0" prefWidth="40.0" styleClass="top-nav-minimize" />
+                     <ImageView fx:id="TOP_FULLSCREEN_IMAGE" fitHeight="13.0" fitWidth="12.0" layoutX="1300.0" layoutY="7.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav">
+                        <image>
+                           <Image url="@images/ZOOM-TOP-NAV.png" />
+                        </image>
+                     </ImageView>
+                     <ImageView fx:id="TOP_MINIMIZE_IMAGE" fitHeight="14.0" fitWidth="12.0" layoutX="1260.0" layoutY="7.0" onMouseExited="#MouseExitTopNav" onMouseMoved="#MouseHoverTopNav" onMousePressed="#MouseClickTopNav">
+                        <image>
+                           <Image url="@images/MINIMIZE-TOP-NAV.png" />
+                        </image>
+                     </ImageView>
+                     <Text fx:id="MEDIA_TITLE" layoutX="11.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" />
+                  </children>
+               </AnchorPane>
+            <AnchorPane id="subtitle-box" layoutY="606.0" prefHeight="58.0" prefWidth="1366.0">
+               <children>
+                  <Text id="subtitle-content" fx:id="SUBTITLE_CONTENT" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle-content" wrappingWidth="1365.999971775047" />
+               </children>
+            </AnchorPane>
+
+                           <AnchorPane id="bottom-nav" fx:id="BOTTOM_SECTION_PANE" layoutX="1.0" layoutY="578.0" prefHeight="190.0" prefWidth="1366.0" visible="false">
+                  <children>
+                     <ImageView fitHeight="190.0" fitWidth="1368.0" layoutX="-2.0">
+                        <image>
+                           <Image url="@images/NAV-BACKGROUND.png" />
+                        </image>
+                     </ImageView>
+                     <JFXSlider fx:id="seekslider" layoutX="28.0" layoutY="48.0" prefWidth="1309.0" value="1.0E-6" AnchorPane.bottomAnchor="106.0">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                     </JFXSlider>
+                     <AnchorPane layoutX="580.5" layoutY="114.0" prefHeight="40.0" prefWidth="180.0" styleClass="main-nav" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="595.5">
+                        <children>
+                           <AnchorPane fx:id="MENU_PLAY_PAUSE" layoutX="70.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" opacity="0.3" prefHeight="46.0" prefWidth="46.0" AnchorPane.leftAnchor="72.0" />
+                           <ImageView fx:id="MENU_PLAY_IMAGE" fitHeight="22.0" fitWidth="22.0" layoutX="84.0" layoutY="12.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
+                              <image>
+                                 <Image url="@images/PLAY.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="MENU_PAUSE_IMAGE" fitHeight="25.0" fitWidth="25.0" layoutX="81.0" layoutY="10.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" visible="false" AnchorPane.leftAnchor="82.0">
+                              <image>
+                                 <Image url="@images/PAUSE.png" />
+                              </image>
+                           </ImageView>
+                           <AnchorPane fx:id="MENU_SEEK_RIGHT" layoutX="144.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_SEEK_RIGHT_IMAGE" fitHeight="22.0" fitWidth="22.0" layoutX="156.0" layoutY="12.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" AnchorPane.rightAnchor="12.0">
+                              <image>
+                                 <Image url="@images/SEEK_FORWARD.png" />
+                              </image>
+                           </ImageView>
+                           <AnchorPane fx:id="MENU_SEEK_LEFT" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" opacity="0.3" prefHeight="46.0" prefWidth="46.0" styleClass="seek-left" />
+                           <ImageView fx:id="MENU_SEEK_LEFT_IMAGE" fitHeight="22.0" fitWidth="22.0" layoutX="12.0" layoutY="11.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" AnchorPane.rightAnchor="156.0">
+                              <image>
+                                 <Image url="@images/SEEK_BACK.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="MENU_PAUSE_IMAGE1" fitHeight="25.0" fitWidth="25.0" layoutX="92.0" layoutY="20.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#videoOperation" visible="false">
+                              <image>
+                                 <Image url="@images/PAUSE.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="1148.0" layoutY="113.0" prefHeight="46.0" prefWidth="165.0" styleClass="right-nav" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="28.0">
+                        <children>
+                           <AnchorPane fx:id="MENU_SHUFFLE" layoutX="119.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_SHUFFLE_IMAGE" fitHeight="25.0" fitWidth="23.0" layoutX="130.0" layoutY="10.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu">
+                              <image>
+                                 <Image url="@images/SHUFFLE.png" />
+                              </image>
+                           </ImageView>
+                           <AnchorPane fx:id="MENU_REPLAY" layoutX="60.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_REPLAY_IMAGE" fitHeight="19.0" fitWidth="19.0" layoutX="73.0" layoutY="13.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu">
+                              <image>
+                                 <Image url="@images/REPLAY.png" />
+                              </image>
+                           </ImageView>
+                           <AnchorPane fx:id="MENU_SOUND" layoutX="1.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_SOUND_IMAGE" fitHeight="19.0" fitWidth="19.0" layoutX="14.0" layoutY="13.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu">
+                              <image>
+                                 <Image url="@images/SOUND.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane layoutX="28.0" layoutY="114.0" prefHeight="67.0" prefWidth="175.0" styleClass="left-nav" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="28.0">
+                        <children>
+                           <Text fx:id="SEEK_VALUE_TEXT" layoutX="11.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           <AnchorPane fx:id="MENU_MAIN_MENU" layoutY="21.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_MAIN_MENU_IMAGE" fitHeight="19.0" fitWidth="21.0" layoutX="12.0" layoutY="34.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu">
+                              <image>
+                                 <Image url="@images/MENU.png" />
+                              </image>
+                           </ImageView>
+                           <AnchorPane fx:id="MENU_LIKE" layoutX="59.0" layoutY="21.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" opacity="0.3" prefHeight="46.0" prefWidth="46.0" />
+                           <ImageView fx:id="MENU_UNLIKE_IMAGE" fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="34.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu">
+                              <image>
+                                 <Image url="@images/UNLIKE.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="MENU_LIKE_IMAGE" fitHeight="20.0" fitWidth="20.0" layoutX="72.0" layoutY="34.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" visible="false">
+                              <image>
+                                 <Image url="@images/LIKE.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </AnchorPane>
+                     <AnchorPane fx:id="MENU" layoutX="28.0" layoutY="-92.0" prefHeight="206.0" prefWidth="180.0" style="-fx-background-color: #121212; -fx-border-color: #AAAAAA; -fx-border-width: .7px;" visible="false">
+                        <children>
+                           <AnchorPane fx:id="OPTION_MEDIA" layoutX="2.0" layoutY="2.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                           <Text fx:id="OPTION_TEXT_MEDIA" layoutX="15.0" layoutY="26.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Media" />
+                           <Pane layoutX="15.0" layoutY="41.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                           <AnchorPane fx:id="OPTION_VIDEO" layoutX="2.0" layoutY="43.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                           <Text fx:id="OPTION_TEXT_VIDEO" layoutX="15.0" layoutY="67.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Video" />
+                           <Pane layoutX="15.0" layoutY="82.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                           <AnchorPane fx:id="OPTION_SUBTITLE" layoutX="2.0" layoutY="84.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                           <Text fx:id="OPTION_TEXT_SUBTITLE" layoutX="14.0" layoutY="108.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtitle" />
+                           <Pane layoutX="14.0" layoutY="123.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                           <AnchorPane fx:id="OPTION_VIEW" layoutX="2.0" layoutY="125.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#MouseClickbottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                           <Text fx:id="OPTION_TEXT_VIEW" layoutX="14.0" layoutY="149.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="View" />
+                           <Pane layoutX="14.0" layoutY="164.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                           <AnchorPane fx:id="OPTION_HELP" layoutX="2.0" layoutY="166.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                           <Text fx:id="OPTION_TEXT_HELP" layoutX="14.0" layoutY="190.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Help" />
+                           <ImageView fx:id="OPTION_ARRAW_MEDIA" fitHeight="7.0" fitWidth="7.0" layoutX="159.0" layoutY="18.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu">
+                              <image>
+                                 <Image url="@images/ARROW.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="OPTION_ARRAW_VIDEO" fitHeight="7.0" fitWidth="7.0" layoutX="159.0" layoutY="59.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu">
+                              <image>
+                                 <Image url="@images/ARROW.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="OPTION_ARRAW_SUBTITLE" fitHeight="7.0" fitWidth="7.0" layoutX="159.0" layoutY="100.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu">
+                              <image>
+                                 <Image url="@images/ARROW.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="OPTION_ARRAW_VIEW" fitHeight="7.0" fitWidth="7.0" layoutX="159.0" layoutY="141.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu">
+                              <image>
+                                 <Image url="@images/ARROW.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                        <effect>
+                           <DropShadow blurType="GAUSSIAN" color="#333333" height="6.0" radius="2.5" width="6.0" />
+                        </effect>
+                     </AnchorPane>
+                     <AnchorPane fx:id="SOUND_VALUME" layoutX="1174.0" layoutY="74.0" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #121212; -fx-border-color: #DDDDDD; -fx-border-width: .7px;" visible="false">
+                        <effect>
+                           <DropShadow blurType="GAUSSIAN" color="#333333" height="6.0" radius="2.5" width="6.0" />
+                        </effect>
+                        <children>
+                           <JFXSlider fx:id="slider" layoutX="12.0" layoutY="13.0" value="1.0E-6" />
+                        </children>
+                     </AnchorPane>
+                  </children>
+               </AnchorPane>
+               <AnchorPane fx:id="SUB_MENU" layoutX="212.0" layoutY="323.0" prefHeight="206.0" prefWidth="180.0" style="-fx-background-color: #121212; -fx-border-color: #DDDDDD; -fx-border-width: .7px;" visible="false">
+                  <children>
+                     <AnchorPane fx:id="MEDIA_OPEN_FILE" layoutX="2.0" layoutY="2.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#openFile_handleMouseEvent" prefHeight="38.0" prefWidth="180.0" />
+                     <Text fx:id="MEDIA_TEXT_OPEN_FILE" layoutX="15.0" layoutY="26.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#openFile_handleMouseEvent" strokeType="OUTSIDE" strokeWidth="0.0" text="Open File" />
+                     <Pane layoutX="15.0" layoutY="41.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                     <AnchorPane fx:id="MEDIA_OPEN_FOLDER" layoutX="2.0" layoutY="43.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                     <Text fx:id="MEDIA_TEXT_OPEN_FOLDER" layoutX="15.0" layoutY="67.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Folder" />
+                     <Pane layoutX="15.0" layoutY="82.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                     <AnchorPane fx:id="MEDIA_OPEN_MULTIPLE_FILE" layoutX="2.0" layoutY="84.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                     <Text fx:id="MEDIA_TEXT_OPEN_MULTIPLE_FILE" layoutX="14.0" layoutY="108.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Recent Media" />
+                     <Pane layoutX="14.0" layoutY="123.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                     <AnchorPane fx:id="MEDIA_CONVERT" layoutX="2.0" layoutY="125.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                     <Text fx:id="MEDIA_TEXT_CONVERT" layoutX="14.0" layoutY="149.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert" />
+                     <Pane layoutX="14.0" layoutY="164.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                     <AnchorPane fx:id="MEDIA_EXIT" layoutX="2.0" layoutY="166.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" prefHeight="38.0" prefWidth="180.0" />
+                     <Text fx:id="MEDIA_TEXT_EXIT" layoutX="14.0" layoutY="190.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit" />
+                  </children>
+                  <effect>
+                     <DropShadow blurType="GAUSSIAN" color="#333333" height="6.0" radius="2.5" width="6.0" />
+                  </effect>
+               </AnchorPane>
+            <AnchorPane fx:id="SUB_MENU_SUBTITLE" layoutX="212.0" layoutY="527.0" prefHeight="80.0" prefWidth="184.0" style="-fx-background-color: #121212; -fx-border-color: #DDDDDD; -fx-border-width: .7px;" visible="false">
+               <children>
+                  <AnchorPane fx:id="SUBTITLE_ADD_FILE" layoutX="2.0" layoutY="2.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#subtitleOperation" prefHeight="38.0" prefWidth="180.0" />
+                  <Text fx:id="SUBTITLE_TEXT_ADD_FILE" layoutX="15.0" layoutY="26.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#subtitleOperation" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Subtitle File" />
+                  <Pane layoutX="15.0" layoutY="41.0" opacity="0.1" prefHeight="0.1" prefWidth="150.0" style="-fx-background-color: #DDDDDD;" />
+                  <AnchorPane fx:id="SUBTITLE_DISABLE" layoutX="2.0" layoutY="43.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#subtitleOperation" prefHeight="38.0" prefWidth="180.0" />
+                  <Text fx:id="SUBTITLE_TEXT_DISABLE" layoutX="15.0" layoutY="67.0" onMouseExited="#MouseExitbottomMenu" onMouseMoved="#MouseHoverBottomMenu" onMousePressed="#subtitleOperation" strokeType="OUTSIDE" strokeWidth="0.0" text="Disable" />
+               </children>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#333333" height="6.0" radius="2.5" width="6.0" />
+               </effect>
+            </AnchorPane>
+            </children>
+         </AnchorPane>
+    </children>
+</AnchorPane>

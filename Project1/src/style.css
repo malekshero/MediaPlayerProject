@@ -1,0 +1,82 @@
+/* Start main style custimaze */
+#AnchorPane #video-player-container { -fx-background-color: #EAE5E2; }
+
+/* top nav left side style of text */
+#AnchorPane #video-player-container #top-nav .text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 9pt; -fx-text-transform: uppercase; }
+
+/* video container - init the image */
+#AnchorPane #video-player-container .video-container { -fx-background-color: #111111 }
+
+/* left menu - style of seek slider value */
+#AnchorPane #video-player-container #bottom-nav .left-nav Text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 11pt; }
+
+/* left side - style of options in the menu */
+#AnchorPane #video-player-container #bottom-nav AnchorPane Text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 10pt; }
+
+/* left side - style of sun menu in the main menu */
+#AnchorPane #video-player-container AnchorPane Text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 10pt; }
+
+/* video container - init the image */
+#AnchorPane #dashboard-container { -fx-background-image: url( 'project_1/images/BACKGROUND_1.png' ); -fx-background-repeat: no-repeat; }
+
+/* dashboard container - top center side - style of text inside the button */
+#AnchorPane #dashboard-container #container #top-center-side Button Text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 14pt; }
+
+/* dashboard container - style of textfield */
+#AnchorPane #dashboard-container #container .top-right-side TextField { -fx-background-color: rgba( 255, 255, 255, .1 ); }
+
+/* dashboard container - style of logo */
+#AnchorPane #dashboard-container #container .top-left-side Label { -fx-text-fill: #FFFFFF; -fx-font-family: Barlow; -fx-font-size: 18pt; }
+
+/* dashboard container - left menu - style of 4 option */
+#AnchorPane #dashboard-container #container .content .content-menu AnchorPane .text{ -fx-fill: #FFFFFF; -fx-font-family: Ubuntu ; -fx-font-size: 12.8pt; -fx-font-weight: bold; }
+#AnchorPane #dashboard-container #container .content .content-menu AnchorPane:hover { -fx-background-color: rgba( 255, 255, 255, .2 ); }
+#AnchorPane #dashboard-container #container .content .content-menu AnchorPane .exit{ -fx-fill: #555555; -fx-font-family: Ubuntu ; -fx-font-size: 12.8pt; -fx-font-weight: bold; }
+
+/* dashboard container - element content - style of 10 containers  */
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane { -fx-background-color: rgba( 255, 255, 255, 0.3 ); }
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane .image-container { -fx-background-color: transparent; -fx-background-size: 180px }
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane .title { -fx-fill: #FFFFFF; -fx-font-family: "PT Sans Narrow" ; -fx-font-size: 14pt;}
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane .description { -fx-fill: #FFFFFF; -fx-font-family: Ubuntu ; -fx-font-size: 10pt; }
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane AnchorPane  { -fx-background-color: transparent;}
+#AnchorPane #dashboard-container #container .content .element-container AnchorPane AnchorPane Text { -fx-fill: #FFFFFF; -fx-font-family: "PT Sans Narrow" ; -fx-font-size: 15pt; }
+
+/* dashboard container - element content - style pagination  */
+#AnchorPane #dashboard-container #pagination { -fx-background-color: transparent; -fx-border-width: .8px; -fx-border-color: #EEEEEE; }
+#AnchorPane #dashboard-container #pagenation-center { -fx-background-color: FFFFFF; }
+#AnchorPane #dashboard-container #pagenation-center Text {-fx-fill: #555555; -fx-font-family: Bahnschrift; -fx-font-size: 13pt; }
+
+/* dashboard container - dashboard - stylr of settings page  */
+#AnchorPane #dashboard-container #dashboard { -fx-background-color: rgba( 19, 19, 19, .8 ); }
+#AnchorPane #dashboard-container #dashboard Text { -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 26px; -fx-font-weight: bold; }
+#AnchorPane #dashboard-container #dashboard .section-title { -fx-fill:  #3498db; -fx-font-family: RajdHani; -fx-font-size: 22px; -fx-font-weight: bold; }
+#AnchorPane #dashboard-container #dashboard .section-description { -fx-fill: #C1BFC0; -fx-font-family: Roboto; -fx-font-size: 13px; -fx-font-weight: normal; }
+#AnchorPane #dashboard-container #dashboard .text { -fx-fill: #C1BFC0; -fx-font-family: Roboto; -fx-font-size: 14px; -fx-font-weight: normal; }
+#AnchorPane #dashboard-container #dashboard .desc { -fx-fill: #DDDDDD; -fx-font-family: Roboto; -fx-font-size: 12px; -fx-font-weight: bold; }
+#AnchorPane #dashboard-container #dashboard #button { -fx-text-fill: #3498db; -fx-border-radius : 2px; -fx-border-color: #3498db; -fx-background-color:  transparent;}
+
+#dashboard-container #dashboard #firstTheme { -fx-background-image: url( 'project_1/images/theme/firstTheme.png' ); -fx-background-repeat: no-repeat; }
+#dashboard-container #dashboard #secondTheme { -fx-background-image: url( 'project_1/images/theme/secondTheme.png' ); -fx-background-repeat: no-repeat; }
+#dashboard-container #dashboard #thirdTheme { -fx-background-image: url( 'project_1/images/theme/thirdTheme.png' ); -fx-background-repeat: no-repeat; }
+#dashboard-container #dashboard AnchorPane #checked-theme { -fx-background-color: rgba( 19, 19, 19, .5 ); }
+
+#dashboard-container #dashboard #checked-color { -fx-background-radius : 100; -fx-background-color : transparent; -fx-border-radius : 100; }
+
+#AnchorPane #dashboard-container AnchorPane .counter { -fx-fill: #3498db; -fx-font-family: RaleWay; -fx-font-size: 30pt; }
+
+
+/* video container - init the image */
+#AnchorPane #dashboard-container #add-playlist { -fx-background-color: rgba( 0, 0, 0, .5 ); }
+#AnchorPane #dashboard-container AnchorPane Text { -fx-fill: #333333; -fx-font-family: Ubuntu; -fx-font-size: 15pt; }
+#AnchorPane #dashboard-container AnchorPane .info { -fx-fill: #333333; -fx-font-family: Ubuntu; -fx-font-size: 12pt; }
+#AnchorPane #dashboard-container AnchorPane .description { -fx-fill: #888888; -fx-font-family: roboto; -fx-font-size: 10pt; }
+#AnchorPane #dashboard-container AnchorPane .path { -fx-fill: #666666; -fx-font-family: roboto; -fx-font-size: 9pt; -fx-font-weight: bold; }
+#AnchorPane #dashboard-container AnchorPane .done { -fx-fill: #FFFFFF; -fx-font-family: Ubuntu; -fx-font-size: 15pt; }
+#AnchorPane #dashboard-container AnchorPane Button:hover { -fx-background-color: #222222; }
+
+/* left side - style of options in the menu */
+#AnchorPane #video-player-container #subtitle-box .subtitle-content { -fx-fill: #FFFFFF; -fx-font-family: RajdHani; -fx-font-size: 18pt; -fx-font-weight: bold; }
+
+/* dashboard container - element content - style of 10 containers  */
+#AnchorPane #dashboard-container #container .content .music-player-container .title-container Text { -fx-fill: #FFFFFF; -fx-font-family: Ubuntu ; -fx-font-size: 12pt; }
+#AnchorPane #dashboard-container #container .content .music-player-container Text{ -fx-fill: #FFFFFF; -fx-font-family: RaleWay; -fx-font-size: 10pt; }
